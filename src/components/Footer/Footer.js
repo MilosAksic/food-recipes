@@ -13,8 +13,8 @@ const footer = (props) => {
              
                <img src={logo} alt="Logo"/>
                <div className="Links">
-                  <a href="https://www.facebook.com" target="_blank"><img src={fb} alt="FB"/></a>
-                  <a href="https://www.instagram.com" target="_blank"><img src={insta} alt="Insta"/></a>
+                  <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src={fb} alt="FB"/></a>
+                  <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src={insta} alt="Insta"/></a>
                </div>
             </div>
             <p>Copyright - Golux Techologies 2019 - Miloš Aksić</p>

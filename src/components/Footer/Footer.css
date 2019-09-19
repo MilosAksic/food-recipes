@@ -2,18 +2,20 @@
     width: 100%;
     height: 300px;
     
+    
 }
 .UpperPart {
     background-color: aqua;
     display: flex;
     justify-content: space-between;
+    padding: 15px;
 
 }
 .Links {
-    width:300px;
-    display: flex;
+    width:225px;
+   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .Links img {
