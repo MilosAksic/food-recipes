@@ -1,0 +1,22 @@
+.Footer {
+    width: 100%;
+    height: 300px;
+    
+}
+.UpperPart {
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+
+}
+.Links {
+    width:300px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Links img {
+    width: 100px;
+    height: 100px;
+}
