@@ -1,0 +1,26 @@
+.Footer {
+    width: 100%;
+    height: 300px;
+    
+    
+}
+.UpperPart {
+    height: 150px;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+
+}
+.Links {
+    width:220px;
+    
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Links img {
+    width: 100px;
+    height: 100px;
+}

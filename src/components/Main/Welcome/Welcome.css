@@ -1,0 +1,9 @@
+.Welcome {
+    
+    height: 800px;
+    background-color: yellow;
+} 
+
+.up {
+    display: flex;
+}
