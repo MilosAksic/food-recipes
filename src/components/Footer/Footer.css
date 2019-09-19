@@ -5,6 +5,7 @@
     
 }
 .UpperPart {
+    height: 150px;
     background-color: aqua;
     display: flex;
     justify-content: space-between;
@@ -12,7 +13,8 @@
 
 }
 .Links {
-    width:225px;
+    width:220px;
+    
    display: flex;
   align-items: center;
   justify-content: space-between;
