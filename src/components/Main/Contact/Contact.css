@@ -2,3 +2,40 @@
     height: 600px;
     background-color: red;
 }
+
+.Contact form {
+    margin: 0 auto;
+    display: flex;
+    width: 25%;
+    height: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contact input, .Contact textarea, .Contact button  {
+    margin:15px;
+    
+    
+}
+
+.Contact input, .Contact textarea{
+    width: 100%;
+}
+
+.Contact textarea{
+    height: 200px;
+}
+
+.Contact button  {
+    padding: 15px 40px;
+    background-color: orange;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.Contact button:hover {
+    cursor: pointer;
+}

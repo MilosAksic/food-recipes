@@ -11,7 +11,7 @@ const footer = (props) => {
             <div className="UpperPart">
                
              
-               <img src={logo} alt="Logo"/>
+               <img src={logo} alt="Logo" className="logo"/>
                <div className="Links">
                   <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><img src={fb} alt="FB"/></a>
                   <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><img src={insta} alt="Insta"/></a>

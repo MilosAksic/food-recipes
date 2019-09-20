@@ -1,0 +1,14 @@
+.Category {
+    margin : 5px;
+    
+    width : 20%;
+
+}
+img {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+}
+p {
+    font-size: 22px;
+}
