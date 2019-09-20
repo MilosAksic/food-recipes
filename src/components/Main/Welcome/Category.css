@@ -1,0 +1,9 @@
+.Category {
+    margin : 5px;
+    border: 1px solid black;
+    width : 20%;
+
+}
+img {
+    display: inline-block;
+}

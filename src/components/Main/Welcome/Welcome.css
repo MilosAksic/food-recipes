@@ -1,9 +1,23 @@
 .Welcome {
     
-    height: 800px;
+    height: 1400px;
     background-color: yellow;
 } 
 
 .up {
     display: flex;
+    
+    height: 400px;
+}
+
+.up img {
+    width: 400px;
+    height: 400px;
+}
+
+.down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
