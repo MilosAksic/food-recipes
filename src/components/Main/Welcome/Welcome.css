@@ -1,18 +1,38 @@
 .Welcome {
     
-    height: 1500px;
+    height: 1700px;
     background-color: yellow;
 } 
 
 .up {
     display: flex;
-    
-    height: 450px;
+    padding:50px;
+    height: 700px;
+}
+
+.up h3 {
+    font-size: 40px;
+}
+.left  {
+    width: 45%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+     align-items: flex-start;
+     justify-content: flex-end;
+     padding-right: 200px;
+}
+
+.left button {
+    margin-top: 150px
+}
+.right {
+    width: 50%;
 }
 
 .up img {
-    width: 400px;
-    height: 400px;
+    width: 95%;
+    height: 95%;
 }
 
 .down {
