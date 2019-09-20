@@ -1,0 +1,14 @@
+.Menu img {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.Menu a {
+    color : black;
+    text-decoration: none;
+    font-size: 22px;
+    margin-left: 20px;
+}

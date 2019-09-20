@@ -13,7 +13,7 @@ class Welcome extends Component {
     categories: []
   }
   componentDidMount(){
-   axios.get('https://www.themealdb.com/api/json/v1/1/categories.php').then (response => {
+   axios.get('/categories.php').then (response => {
       console.log(response.data.categories)
       this.setState({
         categories: response.data.categories

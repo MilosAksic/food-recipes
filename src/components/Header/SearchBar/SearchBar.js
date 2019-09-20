@@ -5,7 +5,8 @@ const searchbar = (props) => {
     return (
         <div className="Searchbar">
 
-            <p>SEARCH BAR!!!!</p>
+            <input type="text" placeholder="Search recipes"></input>
+            <button>Search</button>
             
         </div>
     
