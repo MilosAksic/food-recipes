@@ -1,0 +1,29 @@
+.SingleCategory {
+    
+    text-align: left;
+    height: auto;
+}
+
+.allMeals {
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.SingleCategoryMeal {
+    width: 30%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color:black;
+}
+.SingleCategoryMeal p{
+    font-size: 16px;
+    width: 100%;
+}
