@@ -1,5 +1,6 @@
 import React , { Component }from 'react';
 import './Welcome.css';
+import { Link } from 'react-router-dom'
 
 
 import axios from 'axios'
@@ -23,10 +24,13 @@ class Welcome extends Component {
     render(){
       const categories = this.state.categories.map(
         category => {
-           return <Category 
+          return <Link to="/categories" className='Category'>
+            <Category 
            categoryName = {category.strCategory} 
            key={category.strCategory}
            imgLink={category.strCategoryThumb}/>
+          </Link>
+           
         }
       )
       return (
