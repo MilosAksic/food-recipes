@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
 import './SingleCategory.css';
+import Welcome from '../Main/Welcome/Welcome'
 
 
 import { Link } from 'react-router-dom'
@@ -17,8 +18,9 @@ class SingleCategory extends Component {
     componentDidMount(){
 
         // /filter.php?c=Seafood
-        axios.get('/filter.php?c=Seafood').then (response => {
+        axios.get('/filter.php?c=Beef').then (response => {
             console.log(response.data.meals)
+            console.log(Welcome.state)
             this.setState({
                 meals: response.data.meals
             })

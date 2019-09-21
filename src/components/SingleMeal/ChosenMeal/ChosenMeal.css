@@ -1,0 +1,46 @@
+.ChosenMeal{
+    width: 90%;
+    height: auto;
+    margin: 40px 20px;
+}
+
+.ChosenUpperr {
+    display: flex;
+    height: 450px;
+
+}
+
+.UpperrLeft {
+    width: 45%;
+    height: auto;
+}
+.UpperrLeft h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+.UpperrLeft img {
+    width:100%;
+    height: 400px;
+}
+
+.UpperrRight {
+    width: 50%;
+    height: auto;
+    text-align: left;
+    margin-left: 30px;
+    
+    
+}
+.UpperrRight p {
+    font-size: 16px !important;
+    margin-bottom: 10   px;
+}
+.instruction {
+    margin-top: 70px;
+}
+
+.bold {
+    font-weight: bold;
+    margin-right: 20px;
+    
+}

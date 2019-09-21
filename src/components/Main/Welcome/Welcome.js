@@ -11,21 +11,26 @@ import Category from './Category'
 class Welcome extends Component {
 
   state = {
-    categories: []
+    categories: [],
+    
   }
   componentDidMount(){
    axios.get('/categories.php').then (response => {
       console.log(response.data.categories)
       this.setState({
+        
         categories: response.data.categories
       })
     })
 }
+
+
     render(){
       const categories = this.state.categories.map(
         category => {
           return <Link to="/categories" className='Category'>
-            <Category 
+            <Category
+            
            categoryName = {category.strCategory} 
            key={category.strCategory}
            imgLink={category.strCategoryThumb}/>
