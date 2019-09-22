@@ -10,7 +10,8 @@ import SingleCategory from './components/SingleCategory/SingleCategory'
 import SingleMeal from './components/SingleMeal/SingleMeal'
 import Category from './components/Main/Welcome/Category'
 import SingleCategoryMeal from './components/SingleCategory/SingleCategoryMeal/SingeCategoryMeal'
-import ChosenMeal from './components/SingleMeal/ChosenMeal/ChosenMeal'
+import ChosenMeal from './components/SingleMeal/ChosenMeal/ChosenMeal';
+import SearchPage from './components/SearchPage/SearchPage'
 
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -23,7 +24,8 @@ class App extends Component {
     mealsbyCategory: [],
     choosenMealDetails:[],
     choosenMeal:"",
-    choosedCategory:''
+    choosedCategory:'',
+    
   }
 
   componentDidMount(){
@@ -36,7 +38,7 @@ class App extends Component {
     })
 }
 
-clickHandler(CategoryName){
+clickHandler=(CategoryName)=>{
   this.setState (
     {
       ...this.state,
@@ -55,7 +57,7 @@ clickHandler(CategoryName){
   })
 }
 
-clickHandlerMeal(MealId){
+clickHandlerMeal=(MealId)=>{
   this.setState (
     {
       ...this.state,
@@ -136,6 +138,11 @@ clickHandlerMeal(MealId){
         <Route path="/meal" render={()=>{
           return <SingleMeal 
                       MealDetails = {mealDetails}/>
+        }}  />
+
+        <Route path="/search" render={()=>{
+          return <SearchPage
+                     />
         }}  />
                  
         <Footer />

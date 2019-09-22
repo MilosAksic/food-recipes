@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import './Contact.css'
-
+import Modal from '../../UI/Modal'
 class contact extends Component {
 
     state= {
@@ -8,6 +8,7 @@ class contact extends Component {
         lastName:'',
         Email:'',
         Message:'',
+        sendingMsg:false,
         isModalOpened:false
     }
     handleSubmit = event => {
@@ -15,7 +16,7 @@ class contact extends Component {
         event.preventDefault();
     };
     
-    changedNameHandler(event){
+    changedNameHandler=(event)=>{
         this.setState(
             {
                 ...this.state,
@@ -23,7 +24,7 @@ class contact extends Component {
             }
           )     
     }
-    changedLastNameHandler(event){
+    changedLastNameHandler=(event)=>{
         this.setState(
             {
                 ...this.state,
@@ -32,7 +33,7 @@ class contact extends Component {
           ) 
     }
 
-    changedEmailHandler(event){
+    changedEmailHandler=(event)=>{
         this.setState(
             {
                 ...this.state,
@@ -41,13 +42,29 @@ class contact extends Component {
           )   
     }
 
-    changedMsgHandler(event){
+    changedMsgHandler=(event)=>{
         this.setState(
             {
                 ...this.state,
                 Message : event.target.value
             }
           )    
+    }
+
+    sendingMsg =()=>{
+        this.setState(
+            { 
+                sendingMsg:true
+            }
+          )  
+    }
+
+    modalClosedHandler = () =>{
+        this.setState(
+            {              
+                sendingMsg:false
+            }
+          ) 
     }
     render(){
         const handleSubmit = event => {
@@ -57,6 +74,10 @@ class contact extends Component {
           
         return(
             <div className="Contact">
+                <Modal show={this.state.sendingMsg}
+                        modalClosed={this.modalClosedHandler}>
+                    <h3>Vasa poruka je uspesno poslata</h3>
+                </Modal>
             <h2>Contact</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="First Name"
@@ -68,6 +89,7 @@ class contact extends Component {
                 <textarea placeholder="Message"
                 onChange={this.changedMsgHandler}/>
                 <button type="submit"
+                onClick={this.sendingMsg}
                 >Send</button>
             </form>
         </div>    

@@ -5,10 +5,11 @@ import axios from 'axios';
 
 import Menu from '../Menu/Menu'
 import SearchBar from '../SearchBar/SearchBar'
-
+// import SingleSearchItem from '../../SearchPage/SingleSearchItem/SingleSearchItem'
 class upperheader extends Component {
     state = {
-        value: ''
+        value: '',
+        SearchedArray:[]
       }
       searchresChangedHandler = (event) => {
         this.setState(
