@@ -15,15 +15,39 @@ class contact extends Component {
         event.preventDefault();
     };
     
-    changedNameHandler(){
-              
+    changedNameHandler(event){
+        this.setState(
+            {
+                ...this.state,
+                firstName : event.target.value
+            }
+          )     
     }
-    changedLastNameHandler(){
-              
+    changedLastNameHandler(event){
+        this.setState(
+            {
+                ...this.state,
+                lastName : event.target.value
+            }
+          ) 
     }
 
-    changedEmailHandler(){
-              
+    changedEmailHandler(event){
+        this.setState(
+            {
+                ...this.state,
+                Email : event.target.value
+            }
+          )   
+    }
+
+    changedMsgHandler(event){
+        this.setState(
+            {
+                ...this.state,
+                Message : event.target.value
+            }
+          )    
     }
     render(){
         const handleSubmit = event => {
@@ -36,10 +60,13 @@ class contact extends Component {
             <h2>Contact</h2>
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="First Name"
-                onChange={this.changedName}></input>
-                <input type="text" placeholder="Last Name"></input>
-                <input type="email" placeholder="Email"></input>
-                <textarea placeholder="Message"/>
+                onChange={this.changedNameHandler}></input>
+                <input type="text" placeholder="Last Name"
+                onChange={this.changedLastNameHandler}></input>
+                <input type="email" placeholder="Email"
+                onChange={this.changedEmailHandler}></input>
+                <textarea placeholder="Message"
+                onChange={this.changedMsgHandler}/>
                 <button type="submit"
                 >Send</button>
             </form>
