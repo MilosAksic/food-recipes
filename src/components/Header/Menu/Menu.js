@@ -9,9 +9,10 @@ const menu = (props) => {
             <img src={avatarIcon} alt="avatar"/>
             
             {/* will change later */}
-            <a href="www.facebook.com">About us</a>
+            <a href="/">Home</a>
+            <a href="/#About">About us</a>
             
-            <a href="www.facebook.com">Contact</a>
+            <a href="/#Contact">Contact</a>
         </div>
     
     )

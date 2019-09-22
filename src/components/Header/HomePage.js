@@ -15,8 +15,8 @@ const Homepage = (props) => {
                         <div className="left">
                             <h3>Food recipes</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <a href="/#Categories">Categories </a>
                             
-                            <button>Categories </button>
                         </div>
 
                         <div className="right">
@@ -24,12 +24,19 @@ const Homepage = (props) => {
                         </div>
                         </div>
 
-                        <div className='down'>
+                        <div className='down' id="Categories">
                             {props.categoriesList}
                         </div>
                     </div>
-                <About/>
-                <Contact/>
+                <div id="About">
+                    <About />
+                </div>
+                
+                <div id="Contact">
+                   <Contact/>
+                </div>
+                
+                
                 
             </div>
         

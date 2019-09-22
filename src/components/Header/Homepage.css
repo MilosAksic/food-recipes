@@ -31,9 +31,7 @@
      padding-right: 200px;
 }
 
-.left button {
-    margin-top: 150px
-}
+
 .right {
     width: 50%;
 }
@@ -50,7 +48,9 @@
     flex-wrap: wrap;
 }
 
-.left button {
+.left a {
+    margin-top: 150px;
+    text-decoration: none;
     background-color: orange;
     padding: 10px 20px;
     color: white;
