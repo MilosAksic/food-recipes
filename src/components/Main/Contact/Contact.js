@@ -1,26 +1,105 @@
-import React from 'react';
+import React , { Component } from 'react';
 import './Contact.css'
+import Modal from '../../UI/Modal'
+class contact extends Component {
 
-const contact = (props) => {
-    const handleSubmit = event => {
+    state= {
+        firstName:'',
+        lastName:'',
+        Email:'',
+        Message:'',
+        sendingMsg:false,
+        isModalOpened:false
+    }
+    handleSubmit = event => {
        
         event.preventDefault();
-      };
+    };
+    
+    changedNameHandler=(event)=>{
+        this.setState(
+            {
+                ...this.state,
+                firstName : event.target.value
+            }
+          )     
+    }
+    changedLastNameHandler=(event)=>{
+        this.setState(
+            {
+                ...this.state,
+                lastName : event.target.value
+            }
+          ) 
+    }
 
-    return (
-        <div className="Contact">
+    changedEmailHandler=(event)=>{
+        this.setState(
+            {
+                ...this.state,
+                Email : event.target.value
+            }
+          )   
+    }
+
+    changedMsgHandler=(event)=>{
+        this.setState(
+            {
+                ...this.state,
+                Message : event.target.value
+            }
+          )    
+    }
+
+    sendingMsg =()=>{
+        this.setState(
+            { 
+                sendingMsg:true
+            }
+          )  
+    }
+
+    modalClosedHandler = () =>{
+        this.setState(
+            {              
+                sendingMsg:false
+            }
+          ) 
+    }
+    render(){
+        const handleSubmit = event => {
+       
+            event.preventDefault();
+          };
+          
+        return(
+            <div className="Contact">
+                <Modal show={this.state.sendingMsg}
+                        modalClosed={this.modalClosedHandler}>
+                    <h3>Vasa poruka je uspesno poslata</h3>
+                </Modal>
             <h2>Contact</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="First Name"></input>
-                <input type="text" placeholder="Last Name"></input>
-                <input type="email" placeholder="Email"></input>
-                <textarea placeholder="Message"/>
+                <input type="text" placeholder="First Name"
+                onChange={this.changedNameHandler}></input>
+                <input type="text" placeholder="Last Name"
+                onChange={this.changedLastNameHandler}></input>
+                <input type="email" placeholder="Email"
+                onChange={this.changedEmailHandler}></input>
+                <textarea placeholder="Message"
+                onChange={this.changedMsgHandler}/>
                 <button type="submit"
+                onClick={this.sendingMsg}
                 >Send</button>
             </form>
-        </div>
+        </div>    
+        )
+    }
+       
     
-    )
+    
+
+    
 }
 
 export default contact

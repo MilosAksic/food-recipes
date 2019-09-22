@@ -1,6 +1,8 @@
 import React from 'react';
 import './SearchBar.css'
 
+import SearchIcon from '../../../assets/Icons/search.png'
+
 const searchbar = (props) => {
     const handleSubmit = event => {     
         event.preventDefault();
@@ -16,7 +18,9 @@ const searchbar = (props) => {
                 </input>
               <button type="submit"
               onClick={props.clicked}
-               >Search</button>
+               >
+                 <img src={SearchIcon} alt='search'/>
+               </button>
             </form>
             
             
