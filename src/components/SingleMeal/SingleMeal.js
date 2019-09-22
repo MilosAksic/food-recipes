@@ -5,7 +5,7 @@ const SingleMeal =(props) => {
 
         return(
             <div className="SingleMeal">
-                {props.mealDetails}
+                {props.MealDetails}
             </div>
         )
     }

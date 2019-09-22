@@ -102,8 +102,8 @@ clickHandlerMeal(MealId){
                           </Link>
                       }
                   )
-
-   const mealDetails = this.state.choosenMealDetails.map(
+   let FinishedMeal = this.state.choosenMealDetails                   
+   const mealDetails = FinishedMeal.map(
     meal=>{
       return <ChosenMeal
       mealName={meal.strMeal}
@@ -134,7 +134,8 @@ clickHandlerMeal(MealId){
         }} />
 
         <Route path="/meal" render={()=>{
-          return <SingleMeal MealDetails = {mealDetails}/>
+          return <SingleMeal 
+                      MealDetails = {mealDetails}/>
         }}  />
                  
         <Footer />
