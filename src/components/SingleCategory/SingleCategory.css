@@ -3,7 +3,20 @@
     text-align: left;
     height: auto;
 }
+hr{
+    width : 80%;
+    margin: 0 auto;
+}
+.FeaturedMeal h3, .recomendationText{
+    margin-left: 180px;
+    font-size: 1.7em;
+}
 
+
+.recomendation {
+    padding: 0;
+    margin-left: 60px;
+}
 .allMeals {
     padding: 20px;
     display: flex;
