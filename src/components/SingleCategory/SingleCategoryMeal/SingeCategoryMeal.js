@@ -7,7 +7,7 @@ const singlecategorymeal = (props) => {
         <div className="SingleCategoryMeal">
             
             <img src={props.link} alt="slika"/>
-            <p>Teriyaki chicken {props.mealName}</p>
+            <p> {props.mealName}</p>
         </div>
     
     )

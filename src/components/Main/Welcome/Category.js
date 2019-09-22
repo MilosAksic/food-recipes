@@ -4,11 +4,10 @@ import './Category.css'
 
 const category = (props) => {
     return (
-        <div className="Category" >
+        <div className="Category">
             <div><img src={props.imgLink} alt="category"/></div>
             <div><p>{props.categoryName}</p></div>
-            
-          
+       
         </div>
     
     )

@@ -1,50 +1,23 @@
-import React , { Component } from 'react';
+import React from 'react';
 import './SingleCategory.css';
-import Welcome from '../Main/Welcome/Welcome'
 
 
-import { Link } from 'react-router-dom'
-import axios from 'axios'
-
-import SingleCategoryMeal from './SingleCategoryMeal/SingeCategoryMeal'
-import FeaturedMeal from './FeaturedMeal/FeaturedMeal' 
-
-
-
-class SingleCategory extends Component {
-    state = {
-        meals: []
-      }
-    componentDidMount(){
-
-        // /filter.php?c=Seafood
-        axios.get('/filter.php?c=Beef').then (response => {
-            console.log(response.data.meals)
-            console.log(Welcome.state)
-            this.setState({
-                meals: response.data.meals
-            })
-          })
-
-     }
-    render() {
-        const meals = this.state.meals.map (
-            meal => {
-                return <Link to="/meal" className="SingleCategoryMeal"><SingleCategoryMeal          
-                mealName = {meal.strMeal}
-                link = {meal.strMealThumb}
-                key={meal.idMeal}/>
-                </Link>
-            }
-        )
+const SingleCategory  =(props)=> {
+              
         return(
             <div className="SingleCategory">
-                <h2>KATEGORIJA </h2>
-                <h3>Naziv kategorije </h3>
-                <FeaturedMeal/>
+
+                    <h3>KATEGORIJA </h3>
+            <div className="FeaturedMeal">
+                    <h3>Our recomendation</h3>
+                    <img src={props.feateredURL}alt="slika"/>
+                    <p>{props.meals.strMeal} </p>
+            </div>
+                <h3>{props.categoryName}</h3>
+                {/* <FeaturedMeal meals={props.meals}/> */}
                 <hr/>
                 <div className="allMeals">
-                      {meals}
+                       {props.meals} 
                 </div>
                 
             
@@ -54,6 +27,6 @@ class SingleCategory extends Component {
 
     }
         
-    }
+    
 
 export default SingleCategory
