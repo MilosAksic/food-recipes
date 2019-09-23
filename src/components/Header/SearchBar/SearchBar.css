@@ -6,7 +6,7 @@
 
 .Searchbar input{
     padding:5px;
-    border: none;
+    border: 1px solid gray;
 }
 .Searchbar button {
     width: 30px;
