@@ -8,13 +8,14 @@ const searchPage = (props) => {
             <h3>Search Results</h3>
             <p>Our recommendation</p>
              <div className="Recomendation">
-                <img src={props.imgLink} alt="slika"/>
+                 {props.SearchedArray[0]}
+                {/* <img src={props.imgLink} alt="slika"/>
                 <p>{props.mealName}</p>
 
                 <p>Category: 
                     <span className="boldItem">{props.category}</span></p>
                 <p>Country: 
-                    <span className="boldItem">{props.coutry}</span></p>
+                    <span className="boldItem">{props.coutry}</span></p> */}
              </div>
              <div className='Dropdown'>Dropwon</div>
              <hr/>

@@ -1,9 +1,11 @@
 import React , { Component }from 'react';
-
+import './components/Header/SearchBar/SearchBar.css'
+import './components/Header/UpperHeader/UpperHeader.css'
 import { Route } from 'react-router-dom';
 
 import Homepage from './components/Header/HomePage'
-import UpperHeader from './components/Header/UpperHeader/UpperHeader'
+import SearchBar from './components/Header/SearchBar/SearchBar'
+import Menu from './components/Header/Menu/Menu'
 import SingleCategory from './components/SingleCategory/SingleCategory'
 import SingleMeal from './components/SingleMeal/SingleMeal'
 import Category from './components/Main/Welcome/Category'
@@ -21,9 +23,10 @@ class Site extends Component {
     categories: [],
     mealsbyCategory: [],
     choosenMealDetails:[],
-    searchResultsArray:[],
+    SearchedArray:[],
     choosenMeal:"",
     choosedCategory:'',
+    value: '',
     
   }
 
@@ -37,14 +40,36 @@ class Site extends Component {
     })
 }
 
+searchresChangedHandler = (event) => {
+    this.setState(
+      {
+        ...this.state,
+        value : event.target.value
+      }
+    )
+    
+  }
+//    for search
+  clickedHandler = () => {
+    axios.get (`/search.php?s=${this.state.value}`).then(
+        response =>{
+            console.log(response.data.meals);
+            this.setState (
+                {
+                  ...this.state,
+                  SearchedArray:response.data.meals
+                }
+              )
+        }
+    )
+  }
+
 clickHandler=(CategoryName)=>{
   this.setState (
     {
       ...this.state,
       choosedCategory:CategoryName
     }
-    
-
   )
   console.log('clicked')
   axios.get('/filter.php?c='+CategoryName).then (response => {
@@ -90,7 +115,20 @@ clickHandlerMeal=(MealId)=>{
          
       }
     )
+    const SearchedArray = this.state.SearchedArray.map(meal => {
+         return <Link to="/meal"        className="SingleCategoryMeal" 
+                onClick={() => this.clickHandlerMeal(meal.idMeal)}
+                key={meal.idMeal}
+                >
+                    <singleSearchItem         
+        mealName = {meal.strMeal}
+        imgLink = {meal.strMealThumb}
+        key={meal.idMeal}
+        country={meal.strArea}
+        category={meal.strCategory}/>
+        </Link>
 
+    })
     const meals = this.state.mealsbyCategory.map(
                       meal => {
                           return <Link to="/meal" className="SingleCategoryMeal" 
@@ -123,7 +161,15 @@ clickHandlerMeal=(MealId)=>{
     return (
       <div className="Site">
         
-        <UpperHeader />
+        <div className="UpperHeader">
+    
+                <SearchBar 
+                changed= {this.searchresChangedHandler} 
+                value = {this.state.value}
+                clicked = {this.clickedHandler}/>
+                <Menu/>
+                
+        </div>
 
         <Route path="/" exact render={()=>{
           return <Homepage categoriesList = {categories}/>
@@ -143,7 +189,7 @@ clickHandlerMeal=(MealId)=>{
         }}  />
 
         <Route path="/search" render={()=>{
-          return <SearchPage 
+          return <SearchPage  SearchedArray={SearchedArray}
                      />
         }}  />
                  
