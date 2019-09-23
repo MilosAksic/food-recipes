@@ -52,11 +52,24 @@ class contact extends Component {
     }
 
     sendingMsg =()=>{
+        if(this.state.firstName ==="" ||
+        this.state.lastName ===''||
+        this.state.Email ==='' ||this.state.Message ==='') {
+            return
+        }
+        let MessageBody = [this.state.firstName,
+            this.state.lastName,
+            this.state.Email,this.state.Message ]
+
+        localStorage.setItem('FirstName', MessageBody[0]);
+        localStorage.setItem('LastName', MessageBody[1]);
+        localStorage.setItem('Email', MessageBody[2]);
+        localStorage.setItem('Message', MessageBody[3]);
         this.setState(
             { 
                 sendingMsg:true
             }
-          )  
+          ) 
     }
 
     modalClosedHandler = () =>{
