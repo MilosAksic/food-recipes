@@ -3,6 +3,13 @@ import './ChosenMeal.css'
 
 
 const chosenmeal = (props) => {
+    const ingredients = props.ingredients.map(singleIngredient =>{
+        return (<li>{singleIngredient}</li>)
+    })
+
+    const mesurments = props.measurments.map(mesurment =>{
+        return (<li>{mesurment}</li>)
+    })
     return (
         <div className="ChosenMeal">
             <div className="ChosenUpperr">
@@ -30,8 +37,22 @@ const chosenmeal = (props) => {
             </div>
 
             <div className='ChosenDown'>
-                <div className="ingridients"></div>
-                <div className="measure"></div>
+                <div className="ingredients">
+                    <p>Ingridients</p>
+                    <ul> 
+                        {ingredients}
+     
+                     </ul>
+                    
+                </div>
+                <div className="measure">
+                    <p>Measure</p>
+                    
+                    <ul>
+                       {mesurments}
+                        
+                    </ul>
+                </div>
             </div>
             
         </div>

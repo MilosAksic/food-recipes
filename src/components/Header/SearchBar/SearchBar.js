@@ -1,6 +1,8 @@
 import React from 'react';
 import './SearchBar.css'
 
+import { Link } from 'react-router-dom'
+
 import SearchIcon from '../../../assets/Icons/search.png'
 
 const searchbar = (props) => {
@@ -16,11 +18,14 @@ const searchbar = (props) => {
                  value={props.value}>
 
                 </input>
-              <button type="submit"
+                <Link to="/search">
+                <button type="submit"
               onClick={props.clicked}
                >
                  <img src={SearchIcon} alt='search'/>
                </button>
+                </Link>
+              
             </form>
             
             
