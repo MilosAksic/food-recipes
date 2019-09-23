@@ -116,6 +116,8 @@ clickHandlerMeal=(MealId)=>{
       description ={meal.strInstructions}
       hashtags = {meal.strTags}
       key = {meal.strMeal}
+      ingredients = {[meal.strIngredient1,meal.strIngredient2,meal.strIngredient3,meal.strIngredient4,meal.strIngredient5,meal.strIngredient6,meal.strIngredient7,meal.strIngredient8,meal.strIngredient9,meal.strIngredient10]}
+      measurments = {[meal.strMeasure1,meal.strMeasure2,meal.strMeasure3,meal.strMeasure4,meal.strMeasure5,meal.strMeasure6,meal.strMeasure7,meal.strMeasure8,meal.strMeasure9,meal.strMeasure10]}
               />
   }
                 )
