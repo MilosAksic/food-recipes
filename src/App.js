@@ -137,7 +137,8 @@ clickHandlerMeal=(MealId)=>{
 
         <Route path="/meal" render={()=>{
           return <SingleMeal 
-                      MealDetails = {mealDetails}/>
+                      MealDetails = {mealDetails}
+                      meals= {meals}/>
         }}  />
 
         <Route path="/search" render={()=>{
