@@ -19,3 +19,28 @@ img {
 p {
     font-size: 22px;
 }
+
+@media only screen and (max-width: 768px) {
+    .Category {
+        width : 30%;
+        
+    }
+    img {
+        width: 180px;
+        height: 180px;
+        
+    }
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .Category {
+        width : 40%;
+        margin: 9px;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        
+    }
+}

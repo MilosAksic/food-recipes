@@ -58,3 +58,31 @@
     border-radius: 10px;
     font-size: 16px; 
 }
+
+@media only screen and (max-width: 768px) {
+     .up {
+            display: block;
+            padding:50px;
+            height: auto;
+     }
+     .left  {
+        width: 90%;
+        padding: 5px;
+        
+    }
+    .left a {
+        margin-top:50px;
+         
+    }
+    .right {
+        width: 90%;
+    }
+    .up h3 {
+        font-size: 40px;
+        margin-top: 0;
+    }
+    .down {
+        height:1000px;
+    }
+    
+  }

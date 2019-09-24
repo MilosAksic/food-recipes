@@ -23,7 +23,8 @@ const menu = (props) => {
             <a href="/#About">About us</a>
             
             <a href="/#Contact">Contact</a>
-            <a href="/myMeals"style={{
+            <a href="/myMeals"
+            onClick={props.myMealsClick}style={{
                 display: props.isLogged ? 'block' :
                 'none'
             }}>My Meals</a>
