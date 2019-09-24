@@ -6,3 +6,7 @@
 .Dropdown {
     text-align: right;
 }
+.searchedResults {
+    display: flex;
+    flex-wrap: wrap;
+}

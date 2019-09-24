@@ -1,8 +1,11 @@
 .About {
-    height: 500px;
-    background-color: pink;
+    height: 550px;
+    /* background-color: pink; */
     padding: 30px;
+    padding-left: 100px;
     text-align: left;
+    margin-top: 150px;
+    margin-bottom: 50px;
 }
 
 h2 {
@@ -22,4 +25,32 @@ h2 {
 .lowerPart img{
     width: 85%;
     height: 85%;
+}
+
+@media only screen and (max-width: 768px) {
+    .About {
+        margin-top: 350px;
+    }
+    .lowerPart div {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .About {
+        margin-top: 600px;
+    }
+    .lowerPart {
+        flex-direction: column;
+        text-align: center;
+        /* justify-content: center;
+        align-items: center; */
+    }
+    .lowerPart div {
+        width: 95%;
+        text-align: left;
+    }
+    .left2 {
+        margin-bottom: 50px;
+    }
 }
