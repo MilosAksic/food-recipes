@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 
 import Homepage from './components/Header/HomePage'
 import SearchBar from './components/Header/SearchBar/SearchBar'
+import SingleSearchItem  from './components/SearchPage/SingleSearchItem/SingleSearchItem'
 import Menu from './components/Header/Menu/Menu'
 import SingleCategory from './components/SingleCategory/SingleCategory'
 import SingleMeal from './components/SingleMeal/SingleMeal'
@@ -120,12 +121,13 @@ clickHandlerMeal=(MealId)=>{
                 onClick={() => this.clickHandlerMeal(meal.idMeal)}
                 key={meal.idMeal}
                 >
-                    <singleSearchItem         
+                    <SingleSearchItem         
         mealName = {meal.strMeal}
         imgLink = {meal.strMealThumb}
         key={meal.idMeal}
         country={meal.strArea}
         category={meal.strCategory}/>
+
         </Link>
 
     })
