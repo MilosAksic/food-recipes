@@ -3,13 +3,14 @@
     height: 300px;
     
     
+    
 }
 .UpperPart {
     height: 150px;
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
     padding: 15px;
+    margin-bottom: 30px;
 
 }
 
@@ -19,7 +20,7 @@
 }
 
 .Links {
-    width:220px;
+    width:150px;
     
    display: flex;
   align-items: center;
@@ -27,6 +28,6 @@
 }
 
 .Links img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
 }

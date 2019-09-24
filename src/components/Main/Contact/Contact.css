@@ -1,6 +1,6 @@
 .Contact {
     height: 600px;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .Contact form {
@@ -21,6 +21,7 @@
 
 .Contact input, .Contact textarea{
     width: 100%;
+    padding: 5px;
 }
 
 .Contact textarea{

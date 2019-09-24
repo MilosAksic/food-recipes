@@ -1,4 +1,5 @@
 .Searchbar form{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,8 +23,10 @@
     cursor:pointer;
 }
 .Searchbar img {
+    
     width: 100%;
     height: 100%;
     border: none;
-    outline: none
+    outline: none;
+    margin: 0;
 }

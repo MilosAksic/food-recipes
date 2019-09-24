@@ -1,9 +1,21 @@
+.Menu {
+    position: relative;
+     display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-right: 70px;
+}
+
 .Menu img {
-    /* display: flex; */
+    display: flex; 
     justify-content: center;
     align-items: center;
     width: 50px;
     height: 50px;
+    margin: 0;
+}
+.Menu img:hover {
+    cursor: pointer;
 }
 
 .Menu a {
@@ -11,4 +23,43 @@
     text-decoration: none;
     font-size: 22px;
     margin-left: 20px;
+}
+
+.tooltip{
+
+    position: absolute;
+    
+    border-radius: 10px;
+    left:-50px;
+    top:56px;
+    width:300px;
+    height: auto;
+    padding: 10px;
+    text-align: right;
+    box-shadow: 0 0 20px gray;
+
+}
+.tooltip input{
+    width: 100%;
+    border: 1px solid gray;
+    margin-bottom: 10px; 
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.tooltip input:focus {
+    outline: none;
+}
+
+.tooltip button {
+    text-align: left;
+    background-color: orangered;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: none;
+}
+
+.tooltip button:hover{
+    cursor: pointer;
 }

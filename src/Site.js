@@ -28,6 +28,11 @@ class Site extends Component {
     choosenMeal:"",
     choosedCategory:'',
     value: '',
+    showTooltip : false,
+    isAtHomePage: true,
+    isLogged:false,
+    username : 'admin',
+    password: 'admin'
     
   }
 
@@ -49,6 +54,14 @@ searchresChangedHandler = (event) => {
       }
     )
     
+  }
+  avatarClcikedHandler = () =>{
+    this.setState (
+      {
+        ...this.state,
+        showTooltip:!this.state.showTooltip
+      }
+    )
   }
 //    for search
   clickedHandler = () => {
@@ -107,7 +120,8 @@ clickHandlerMeal=(MealId)=>{
     const categories = this.state.categories.map(
       category => {
         return <Link to="/categories" className='Category' 
-                                      onClick={() => this.clickHandler(category.strCategory)} >
+                                      onClick={() => this.clickHandler(category.strCategory)}
+                                      key={category.strCategory} >
           <Category        
          categoryName = {category.strCategory} 
          key={category.strCategory}
@@ -169,7 +183,10 @@ clickHandlerMeal=(MealId)=>{
                 changed= {this.searchresChangedHandler} 
                 value = {this.state.value}
                 clicked = {this.clickedHandler}/>
-                <Menu/>
+                <Menu username ={this.state.username}
+                      password = {this.state.username}
+                      show={this.state.showTooltip}
+                      avatarClicked={this.avatarClcikedHandler}/>
                 
         </div>
 
