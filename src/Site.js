@@ -5,6 +5,7 @@ import { Route } from 'react-router-dom';
 
 import Homepage from './components/Header/HomePage'
 import SearchBar from './components/Header/SearchBar/SearchBar'
+import MyMeals from './components/MyMeals/MyMeals'
 import SingleSearchItem  from './components/SearchPage/SingleSearchItem/SingleSearchItem'
 import Menu from './components/Header/Menu/Menu'
 import SingleCategory from './components/SingleCategory/SingleCategory'
@@ -25,13 +26,18 @@ class Site extends Component {
     mealsbyCategory: [],
     choosenMealDetails:[],
     SearchedArray:[],
+    randomMeal1:[],
+    randomMeal2:[],
+    randomMeal3:[],
     choosenMeal:"",
     choosedCategory:'',
     value: '',
     showTooltip : false,
     isAtHomePage: true,
     isLogged:false,
-    username : 'admin',
+    typedUsername :'',
+    typedPassword:"",
+    username : 'admin@admin.com',
     password: 'admin'
     
   }
@@ -44,6 +50,28 @@ class Site extends Component {
         categories: response.data.categories
       })
     })
+
+    axios.get('/random.php').then (response => {        
+      this.setState({
+        ...this.state,
+        randomMeal1: response.data.meals
+      })
+    })
+
+    axios.get('/random.php').then (response => {        
+       this.setState({
+         ...this.state,
+         randomMeal2: response.data.meals
+       })
+     })
+
+     axios.get('/random.php').then (response => {        
+       this.setState({
+         ...this.state,
+         randomMeal3: response.data.meals
+       })
+     })
+  
 }
 
 searchresChangedHandler = (event) => {
@@ -55,6 +83,37 @@ searchresChangedHandler = (event) => {
     )
     
   }
+
+  // ChangedMailHandler
+
+  ChangedMailHandler = (event) => {
+    this.setState(
+      {
+        ...this.state,
+        typedUsername : event.target.value
+      }
+    )
+    
+  }
+  // ChangedPasswordHandler
+
+  ChangedPasswordHandler = (event) => {
+    this.setState(
+      {
+        ...this.state,
+        typedPassword : event.target.value
+      }
+    )
+    
+  }
+  logOutHandler =()=>{
+    this.setState (
+      {
+        ...this.state,
+        isLogged:false
+      }
+    )
+  }
   avatarClcikedHandler = () =>{
     this.setState (
       {
@@ -65,24 +124,46 @@ searchresChangedHandler = (event) => {
   }
 //    for search
   clickedHandler = () => {
+    if (this.state.value==="") return
     axios.get (`/search.php?s=${this.state.value}`).then(
         response =>{
+            
             console.log(response.data.meals);
             this.setState (
                 {
                   ...this.state,
-                  SearchedArray:response.data.meals
+                  SearchedArray:response.data.meals,
+                  isAtHomePage : false
                 }
               )
         }
     )
   }
 
+  searchRouteHandler=()=>{
+    if(this.state.value==='') return
+  }
+
+  logginHandler =() => {
+    if(this.state.typedUsername==="admin@admin.com" &&
+    this.state.typedPassword==="admin" ){
+      this.setState (
+        {
+          ...this.state,         
+          isLogged : true,
+          showTooltip : false
+
+        }
+      )
+    }
+  }
+
 clickHandler=(CategoryName)=>{
   this.setState (
     {
       ...this.state,
-      choosedCategory:CategoryName
+      choosedCategory:CategoryName,
+      isAtHomePage : false
     }
   )
   console.log('clicked')
@@ -96,10 +177,12 @@ clickHandler=(CategoryName)=>{
 }
 
 clickHandlerMeal=(MealId)=>{
+
   this.setState (
     {
       ...this.state,
-      choosenMeal:MealId
+      choosenMeal:MealId,
+      isAtHomePage : false
     }
     
 
@@ -157,6 +240,43 @@ clickHandlerMeal=(MealId)=>{
                           </Link>
                       }
                   )
+   const randomMeal1 = this.state.randomMeal1.map(
+    meal => {
+        return <Link to="/meal" className="SingleCategoryMeal" 
+                               onClick={() => this.clickHandlerMeal(meal.idMeal)}
+                                key={meal.idMeal}
+                                ><SingleCategoryMeal          
+        mealName = {meal.strMeal}
+        link = {meal.strMealThumb}
+        key={meal.idMeal}/>
+        </Link>
+    }
+)
+const randomMeal2 = this.state.randomMeal2.map(
+  meal => {
+      return <Link to="/meal" className="SingleCategoryMeal" 
+                             onClick={() => this.clickHandlerMeal(meal.idMeal)}
+                              key={meal.idMeal}
+                              ><SingleCategoryMeal          
+      mealName = {meal.strMeal}
+      link = {meal.strMealThumb}
+      key={meal.idMeal}/>
+      </Link>
+  }
+)
+
+const randomMeal3 = this.state.randomMeal3.map(
+  meal => {
+      return <Link to="/meal" className="SingleCategoryMeal" 
+                             onClick={() => this.clickHandlerMeal(meal.idMeal)}
+                              key={meal.idMeal}
+                              ><SingleCategoryMeal          
+      mealName = {meal.strMeal}
+      link = {meal.strMealThumb}
+      key={meal.idMeal}/>
+      </Link>
+  }
+)
    let FinishedMeal = this.state.choosenMealDetails                   
    const mealDetails = FinishedMeal.map(
     meal=>{
@@ -180,13 +300,24 @@ clickHandlerMeal=(MealId)=>{
         <div className="UpperHeader">
     
                 <SearchBar 
-                changed= {this.searchresChangedHandler} 
+                changed= {this.searchresChangedHandler}searchRouteHandler={this.searchRouteHandler}
                 value = {this.state.value}
                 clicked = {this.clickedHandler}/>
                 <Menu username ={this.state.username}
                       password = {this.state.username}
                       show={this.state.showTooltip}
-                      avatarClicked={this.avatarClcikedHandler}/>
+                      avatarClicked={this.avatarClcikedHandler}
+                      atHome={this.state.isAtHomePage}
+                      isLogged={this.state.isLogged}
+                      clicked={this.logginHandler}
+                      valueMail={this.state.typedUsername}
+                      valuePw={this.state.typedPassword}
+                      changedMail= {this.ChangedMailHandler}
+                      changedPw= {
+                        this.ChangedPasswordHandler
+                      }
+                      logOut={this.logOutHandler}
+                      />
                 
         </div>
 
@@ -210,6 +341,13 @@ clickHandlerMeal=(MealId)=>{
         <Route path="/search" render={()=>{
           return <SearchPage  SearchedArray={SearchedArray}
                      />
+        }}  />
+
+<Route path="/myMeals" render={()=>{
+          return <MyMeals 
+          randomMeal1={randomMeal1}
+          randomMeal2={randomMeal2}
+          randomMeal3={randomMeal3}/>
         }}  />
                  
         

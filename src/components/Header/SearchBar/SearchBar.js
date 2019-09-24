@@ -18,7 +18,7 @@ const searchbar = (props) => {
                  value={props.value}>
 
                 </input>
-                <Link to="/search">
+                <Link to="/search" onClick={props.searchRouteHandler}>
                 <button type="submit"
               onClick={props.clicked}
                >

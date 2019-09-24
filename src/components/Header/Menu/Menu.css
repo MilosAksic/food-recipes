@@ -18,17 +18,21 @@
     cursor: pointer;
 }
 
-.Menu a {
+.Menu a, .Menu p {
     color : black;
     text-decoration: none;
     font-size: 22px;
     margin-left: 20px;
 }
 
+.Menu p:hover {
+    cursor: pointer;
+}
+
 .tooltip{
 
     position: absolute;
-    
+    background: white;
     border-radius: 10px;
     left:-50px;
     top:56px;
@@ -62,4 +66,7 @@
 
 .tooltip button:hover{
     cursor: pointer;
+}
+.tooltip button:focus{
+    outline: none;
 }
