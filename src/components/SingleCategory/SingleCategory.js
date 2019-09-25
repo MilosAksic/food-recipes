@@ -11,7 +11,7 @@ const SingleCategory  =(props)=> {
         return(
             <div className="SingleCategory">
 
-            
+            <div className="flexcontainer">
             <div className="FeaturedMeal">
                  <h3>{props.categoryName}</h3>
                     <p className="recomendationText">Our recomendation</p>
@@ -19,7 +19,7 @@ const SingleCategory  =(props)=> {
                     <div className="recomendation">{props.meals[0]}</div> 
             </div>
 
-            <div className="Searchbar">
+            <div className="Searchbar" id='searchBar'>
                     <form onSubmit={handleSubmit}>
                     <input type="text"
                         placeholder="Search recipes"
@@ -32,6 +32,7 @@ const SingleCategory  =(props)=> {
                         <img src={SearchIcon} alt='search'/>
                     </button>
                     </form>
+             </div>
              </div>
                 
                 

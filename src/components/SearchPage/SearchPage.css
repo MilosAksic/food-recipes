@@ -3,6 +3,10 @@
     width: 100%;
     height: auto;
 }
+.titles{
+    margin-left: 110px;
+
+}
 .Dropdown {
     text-align: right;
 }

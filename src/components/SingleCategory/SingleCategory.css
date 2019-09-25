@@ -8,7 +8,7 @@ hr{
     margin: 0 auto;
 }
 .FeaturedMeal h3, .recomendationText{
-    margin-left: 180px;
+    
     font-size: 1.7em;
 }
 
@@ -36,9 +36,17 @@ hr{
     text-decoration: none;
     color:black;
 }
+#searchBar {
+    padding-top: 100px;
+}
 .SingleCategoryMeal p{
     font-size: 16px;
     width: 100%;
+}
+
+.flexcontainer {
+    display:flex;
+    justify-content: space-evenly;
 }
 
 @media only screen and (max-width: 576px) {

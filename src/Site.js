@@ -148,7 +148,17 @@ searchresChangedHandler = (event) => {
     this.setState (
       {
         ...this.state,
-        isAtHomePage : false
+        isAtHomePage : false,
+        isLogged:true
+      }
+    )
+  }
+
+  homeClicked=()=>{
+    this.setState (
+      {
+        ...this.state,
+        isAtHomePage : true
       }
     )
   }
@@ -203,6 +213,8 @@ clickHandlerMeal=(MealId)=>{
       ...this.state,
       choosenMealDetails: response.data.meals
     })
+  }).catch(error=>{
+    return
   })
 }
 
@@ -327,6 +339,7 @@ const randomMeal3 = this.state.randomMeal3.map(
                       }
                       logOut={this.logOutHandler}
                       myMealsClick = {this.myMealsClicked}
+                      homeClicked ={this.homeClicked}
                       />
                 
         </div>

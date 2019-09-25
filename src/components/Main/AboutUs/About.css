@@ -1,6 +1,5 @@
 .About {
     height: 550px;
-    /* background-color: pink; */
     padding: 30px;
     padding-left: 100px;
     text-align: left;
@@ -43,8 +42,7 @@ h2 {
     .lowerPart {
         flex-direction: column;
         text-align: center;
-        /* justify-content: center;
-        align-items: center; */
+        
     }
     .lowerPart div {
         width: 95%;

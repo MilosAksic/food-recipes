@@ -1,5 +1,5 @@
 import React from 'react';
-import './FeaturedMeal.css'
+
 
 
 const featuredmeal = (props) => {

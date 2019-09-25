@@ -9,8 +9,9 @@
     height: 90px;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 864px) {
     .UpperHeader {
         flex-direction: column;
+        height: 125px;
     }
 }

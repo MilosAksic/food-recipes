@@ -21,16 +21,20 @@
     cursor: pointer;
 }
 
-.Menu a, .Menu p {
+.Menu a, .Menu p, .link {
     color :white;
     text-decoration: none;
     font-size: 22px;
     margin-left: 20px;
 }
 
-.Menu p:hover {
+
+.Menu p:hover,.link:hover,.Menu a:hover {
     cursor: pointer;
+    color: red;
 }
+
+
 
 .tooltip{
 
@@ -74,8 +78,17 @@
     outline: none;
 }
 
+@media only screen and (max-width: 676px) {
+    .link,.Menu a, .Menu p {       
+        font-size: 18px;
+    }
+
+}
 @media only screen and (max-width: 576px) {
     .Menu {
         margin-top: 20px;
+    }
+    .link,.Menu a, .Menu p {       
+        font-size: 16px;
     }
 }

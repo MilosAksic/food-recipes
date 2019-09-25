@@ -9,9 +9,11 @@ const singleSearchItem = (props) => {
              <p>{props.mealName}</p>
 
              <p>Category: 
-                 <span className="boldItem">{props.category}</span></p>
+                 <span className="boldItem">{props.category}</span>
+            </p>
              <p>Country: 
-                 <span className="boldItem">{props.country}</span></p>
+                 <span className="boldItem">{props.country}</span>
+            </p>
         </div>
     );
 
