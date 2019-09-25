@@ -13,22 +13,22 @@ const searchbar = (props) => {
         <div className="Searchbar">
             <form onSubmit={handleSubmit}>
                <input type="text"
-                 placeholder="Search recipes"
-                 onChange={props.changed} 
-                 value={props.value}>
+                    placeholder="Search recipes"
+                    onChange={props.changed} 
+                    value={props.value}>
 
                 </input>
-                <Link to="/search" onClick={props.searchRouteHandler}>
+                <Link to="/search"
+                      onClick={props.searchRouteHandler}>
                 <button type="submit"
-              onClick={props.clicked}
+                     onClick={props.clicked}
                >
                  <img src={SearchIcon} alt='search'/>
-               </button>
+                 </button>
                 </Link>
               
             </form>
-            
-            
+      
         </div>
     
     )

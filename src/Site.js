@@ -154,6 +154,15 @@ searchresChangedHandler = (event) => {
     )
   }
 
+  homeClicked=()=>{
+    this.setState (
+      {
+        ...this.state,
+        isAtHomePage : true
+      }
+    )
+  }
+
   logginHandler =() => {
     if(this.state.typedUsername==="admin@admin.com" &&
     this.state.typedPassword==="admin" ){
@@ -330,6 +339,7 @@ const randomMeal3 = this.state.randomMeal3.map(
                       }
                       logOut={this.logOutHandler}
                       myMealsClick = {this.myMealsClicked}
+                      homeClicked ={this.homeClicked}
                       />
                 
         </div>

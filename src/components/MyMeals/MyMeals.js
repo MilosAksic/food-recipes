@@ -8,9 +8,9 @@ const myMeals = (props) =>{
             <div className="myMelas">
                   <h3>My Meals</h3>   
                   <div className="MyMealsRandom">
-                    {props.randomMeal1}
-                    {props.randomMeal2}
-                    {props.randomMeal3}
+                        {props.randomMeal1}
+                        {props.randomMeal2}
+                        {props.randomMeal3}
                    </div>   
             </div>
         );

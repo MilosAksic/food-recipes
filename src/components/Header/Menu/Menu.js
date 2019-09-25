@@ -13,23 +13,25 @@ const menu = (props) => {
          
             <img src={avatarIcon} alt="avatar" onClick={props.avatarClicked}
             style={{
-                display: props.isLogged ? 'none' :
-                'block'
+                display: props.isLogged || !props.atHome ? 'none' :'block'
             }}/>
             
-            {/* will change later */}
-            <a href="/" style={{
-                display: props.atHome ? 'none' :
-                'block'
-            }}>Home</a>
+        
+            <Link to="/" className="link"
+                    onClick={props.homeClicked}
+                    style={{
+                        display: props.atHome ? 'none' :
+                        'block'
+            }}> Home</Link>
+            
             <a href="/#About">About us</a>
             
             <a href="/#Contact">Contact</a>
 
-            <Link to="/myMeals" className="link"
-            onClick={props.myMealsClick}style={{
-                display: props.isLogged ? 'block' :
-                'none'
+            <Link to="/myMeals" 
+                className="link"
+                onClick={props.myMealsClick}style={{
+                        display: props.isLogged ? 'block':'none'
             }}>My Meals</Link>
             
             <p 
@@ -40,21 +42,20 @@ const menu = (props) => {
             }}>Log out</p>
  
             <div className="tooltip"
-            style={{
-                transform: props.show ? 'translateY(0)' :
-                'translateY(-100vh)',
-                opacity:props.show ? '1' : '0'
+                 style={{
+                        transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
+                        opacity:props.show ? '1' : '0'
             }}>
                 <form onSubmit={handleSubmit}>
-                    <input type="email"          placeholder="Email"
-                    onChange={props.changedMail} 
-                    value={props.valueMail} />
+                    <input type="email" placeholder="Email"
+                        onChange={props.changedMail} 
+                        value={props.valueMail} />
                     <input type="password" placeholder="Password"
-                    onChange={props.changedPw} 
-                    value={props.valuePw} />
+                        onChange={props.changedPw} 
+                        value={props.valuePw} />
                     <button type="submit"
-                 onClick={props.clicked}
-               >Login</button>
+                       onClick={props.clicked}
+                     >Login</button>
                 </form>
             </div>
         </div>
