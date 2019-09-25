@@ -148,7 +148,8 @@ searchresChangedHandler = (event) => {
     this.setState (
       {
         ...this.state,
-        isAtHomePage : false
+        isAtHomePage : false,
+        isLogged:true
       }
     )
   }
@@ -203,6 +204,8 @@ clickHandlerMeal=(MealId)=>{
       ...this.state,
       choosenMealDetails: response.data.meals
     })
+  }).catch(error=>{
+    return
   })
 }
 

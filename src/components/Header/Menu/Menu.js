@@ -2,6 +2,8 @@ import React from 'react';
 import './Menu.css'
 import avatarIcon from '../../../assets/Icons/avatar-icon.png'
 
+import { Link } from 'react-router-dom'
+
 const menu = (props) => {
     const handleSubmit = event => {     
         event.preventDefault();
@@ -23,11 +25,13 @@ const menu = (props) => {
             <a href="/#About">About us</a>
             
             <a href="/#Contact">Contact</a>
-            <a href="/myMeals"
+
+            <Link to="/myMeals" className="link"
             onClick={props.myMealsClick}style={{
                 display: props.isLogged ? 'block' :
                 'none'
-            }}>My Meals</a>
+            }}>My Meals</Link>
+            
             <p 
             onClick={props.logOut}
             style={{

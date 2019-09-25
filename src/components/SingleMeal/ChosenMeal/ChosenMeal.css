@@ -35,6 +35,9 @@
     font-size: 16px !important;
     margin-bottom: 10px;
 }
+.UpperrRight a{
+    text-decoration: none;
+}
 .instruction {
     margin-top: 70px;
 }
@@ -63,7 +66,12 @@
 .ChosenDown li{
     margin: 5px;
 }
-
+@media only screen and (max-width: 968px) {
+    .UpperrLeft img {
+        width:300px;
+        height: 250px;
+    }
+}
 @media only screen and (max-width: 768px) {
     .ChosenUpperr {
         
@@ -80,3 +88,19 @@
     
     }
 }
+
+@media only screen and (max-width: 576px) {
+    .UpperrLeft {
+        width: 85%;
+    }
+    .ChosenDown{
+        justify-content: flex-start;
+        align-items:flex-start; 
+    
+    }
+}
+
+/* .UpperrLeft {
+    width: 45%;
+    height: auto;
+} */

@@ -30,7 +30,8 @@ const chosenmeal = (props) => {
                          <span className="bold">Country:</span> {props.country}</p>
                     <p>
                          <span className="bold">Video:</span>
-                          {props.video}</p>
+                         <a href={props.video} target="blank"> 
+                          {props.video} </a></p>
                     <p className="instruction">{props.description}</p>
                 </div>
 
